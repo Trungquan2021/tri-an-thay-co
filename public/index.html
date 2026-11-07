@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bức Tường Lời Tri Ân – 20/11 | Ngày Nhà Giáo Việt Nam</title>
+  <meta name="description" content="Không gian trang trọng và ấm áp để trao gửi những lời tri ân ẩn danh tới thầy cô nhân ngày Nhà giáo Việt Nam 20/11.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+
+  <!-- Google Fonts: Editorial Serif + Poetic Handwriting + Clean UI Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Socket.IO -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="editorial-theme">
+  <!-- Subtle ambient canvas particles / golden dust -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- ═══════════════ TOP NAVIGATION ═══════════════ -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="brand" id="brand-home" role="button" tabindex="0">
+        <svg class="brand-crest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">BỨC TƯỜNG TRI ÂN</span>
+          <span class="brand-sub">20.11 • Tri Ân Thầy Cô</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- Single unified statistic: Total wishes sent -->
+        <div class="stat-pill" title="Tổng số lượt gửi lời tri ân trên toàn hệ thống">
+          <span class="stat-indicator"></span>
+          <span class="stat-text">Tổng lời tri ân đã gửi:</span>
+          <span class="stat-number" id="global-total-count">0</span>
+        </div>
+
+        <nav class="view-switcher" aria-label="Chuyển chế độ xem">
+          <button id="btn-nav-write" class="nav-tab active" type="button">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+              <path d="M2 2l7.586 7.586"/>
+              <circle cx="11" cy="11" r="2"/>
+            </svg>
+            <span>Gửi lời tri ân</span>
+          </button>
+          <button id="btn-nav-wall" class="nav-tab" type="button">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 9h18M9 21V9"/>
+            </svg>
+            <span>Bức tường tri ân</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════ MAIN STAGE ═══════════════ -->
+  <main class="main-stage">
+
+    <!-- ─────────────────────────────────────────────
+         VIEW 1: MÀN HÌNH GỬI LỜI TRI ÂN (LETTER / CARD)
+         ───────────────────────────────────────────── -->
+    <section id="view-write" class="view-panel active-view">
+      <div class="container-narrow">
+
+        <!-- Introduction Header -->
+        <div class="letter-intro">
+          <div class="ornament-badge">
+            <span class="line"></span>
+            <span class="text">KỶ NIỆM NGÀY NHÀ GIÁO VIỆT NAM</span>
+            <span class="line"></span>
+          </div>
+
+          <h1 class="page-title">
+            <span class="title-serif">20/11</span>
+            <span class="title-divider">—</span>
+            <span class="title-sub">GỬI NGÀN LỜI YÊU THƯƠNG</span>
+          </h1>
+
+          <p class="intro-prose">
+            Có những lời cảm ơn chưa kịp nói, có những lời chúc chưa kịp gửi.<br>
+            Hãy để chúng mình gửi những điều ấy đến thầy cô nhé!
+          </p>
+
+          <div class="quote-box">
+            <div class="quote-mark">“</div>
+            <p class="quote-content">
+              Mỗi lời chúc là một bông hoa, mỗi sự đồng điệu là một món quà dành tặng thầy cô.
+            </p>
+            <div class="quote-mark quote-mark-close">”</div>
+          </div>
+        </div>
+
+        <!-- The Letter Card Writing Desk -->
+        <div class="stationery-desk">
+          <div class="stationery-card" id="writing-card">
+            <div class="card-inner-border">
+              <div class="card-header-bar">
+                <div class="salutation">Kính gửi Quý Thầy, Cô,</div>
+                <div class="seal-mark">20.11</div>
+              </div>
+
+              <!-- State A: Form to write wish -->
+              <div id="form-container" class="form-wrapper">
+                <div class="field-wrap">
+                  <textarea
+                    id="wish-input"
+                    class="letter-textarea"
+                    placeholder="Viết lời chúc hoặc lời nhắn bạn muốn gửi đến thầy cô tại đây..."
+                    maxlength="500"
+                    rows="5"
+                    spellcheck="false"
+                  ></textarea>
+                  <div class="char-meter">
+                    <span id="char-count">0</span> / 500
+                  </div>
+                </div>
+
+                <div class="card-action-bar">
+                  <div class="privacy-notice">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    <span>Hoàn toàn ẩn danh • Lưu giữ trang trọng trên Bức Tường Tri Ân</span>
+                  </div>
+
+                  <button id="btn-submit" class="btn-royal" type="button">
+                    <span class="btn-caption">GỬI LỜI YÊU THƯƠNG</span>
+                    <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                  </button>
+                </div>
+
+                <div id="submit-alert" class="status-alert" style="display: none;"></div>
+              </div>
+
+              <!-- State B: Already Submitted Wish (One wish per person) -->
+              <div id="already-submitted-view" class="submitted-wrapper" style="display: none;">
+                <div class="submitted-badge">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                  <span>Lời tri ân của bạn đã được trao gửi</span>
+                </div>
+
+                <blockquote class="user-wish-quote" id="user-submitted-content">
+                  <!-- User's submitted text populated via JS -->
+                </blockquote>
+
+                <p class="submitted-desc">
+                  Tâm tình của bạn đã hòa chung vào Bức Tường Tri Ân. Mỗi sự đồng điệu sẽ khiến lời chúc ngày càng to lớn và nổi bật hơn.
+                </p>
+
+                <div class="submitted-actions">
+                  <button id="btn-goto-wall" class="btn-royal" type="button">
+                    <span>ĐẾN BỨC TƯỜNG TRI ÂN</span>
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </button>
+                  <button id="btn-rewrite" class="btn-ghost" type="button">
+                    Viết lại lời chúc khác
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom link directly to Wall -->
+          <div class="desk-footer">
+            <button id="btn-link-to-wall" class="link-to-wall" type="button">
+              Khám phá Bức Tường Tri Ân của các thế hệ học trò
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────────────────
+         VIEW 2: MÀN HÌNH BỨC TƯỜNG TRI ÂN (CLASSROOM WHITEBOARD)
+         ───────────────────────────────────────────── -->
+    <section id="view-wall" class="view-panel">
+      <div class="wall-wrapper">
+
+        <!-- Wall Top Navigation Bar -->
+        <div class="wall-header">
+          <div class="wall-header-left">
+            <button id="btn-back-to-write" class="btn-back" type="button">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Trở về trang gửi lời chúc</span>
+            </button>
+          </div>
+
+          <div class="wall-header-center">
+            <h2 class="wall-title">BỨC TƯỜNG LỜI TRI ÂN</h2>
+            <p class="wall-subtitle">
+              Bảng trắng lưu giữ ngàn lời tri ân • Những lời chúc cùng chung sự đồng điệu sẽ tự động lớn dần và nổi bật nhất
+            </p>
+          </div>
+
+          <div class="wall-header-right">
+            <div class="wall-stat-box">
+              <span class="wall-stat-label">Tổng lời chúc đã gửi</span>
+              <span class="wall-stat-val" id="wall-total-count">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═════ THE CLASSROOM WHITEBOARD (BẢNG TRẮNG 20/11) ═════ -->
+        <div class="whiteboard-frame">
+          <!-- Whiteboard Top Hanging Hooks & Corner Caps -->
+          <div class="board-top-hangers">
+            <span class="hanger-mount left"></span>
+            <span class="hanger-mount right"></span>
+          </div>
+
+          <!-- The Whiteboard Surface -->
+          <div class="whiteboard-surface" id="tribute-board">
+
+            <!-- 20/11 Artistic Board Header / Classroom Chalkboard Title -->
+            <div class="board-artwork-corner" aria-hidden="true">
+              <div class="sunflower-sketch">
+                <svg viewBox="0 0 100 100" width="48" height="48" fill="none" stroke="#D97706" stroke-width="2">
+                  <circle cx="50" cy="50" r="14" fill="#B45309" stroke="#92400E"/>
+                  <path d="M50 16 C53 28 47 28 50 36 M50 64 C53 72 47 72 50 84 M16 50 C28 53 28 47 36 50 M64 50 C72 53 72 47 84 50 M26 26 C36 34 33 38 40 40 M60 60 C67 62 64 66 74 74 M74 26 C66 36 62 33 60 40 M40 60 C38 67 34 64 26 74" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="artwork-text">
+                <span class="artwork-date">20 • 11</span>
+                <span class="artwork-title">Tri Ân Thầy Cô</span>
+              </div>
+            </div>
+
+            <!-- Random & Aesthetic Scatter Container for Wishes -->
+            <div class="board-scatter-stage" id="board-scatter-stage">
+              <!-- Empty state if 0 wishes -->
+              <div class="whiteboard-empty" id="board-empty-state">
+                <div class="empty-marker-icon">✏️</div>
+                <h3 class="empty-heading">Bảng trắng đang chờ đón những lời tri ân đầu tiên</h3>
+                <p class="empty-note">
+                  Hãy gửi lời chúc của bạn để cùng thắp sáng bức tường tri ân nhân ngày 20/11 nhé!
+                </p>
+                <button id="btn-empty-write" class="btn-royal" type="button" style="margin-top: 18px;">
+                  <span>VIẾT LỜI TRI ÂN NGAY</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Marker & Eraser Accessory Tray at bottom of board -->
+            <div class="marker-tray" aria-hidden="true">
+              <div class="tray-groove">
+                <span class="marker marker-blue" title="Bút dạ xanh"></span>
+                <span class="marker marker-red" title="Bút dạ đỏ"></span>
+                <span class="marker marker-black" title="Bút dạ đen"></span>
+                <span class="board-eraser" title="Khăn lau bảng"></span>
+              </div>
+              <div class="tray-flower">🌻</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Subtle Wall Legend -->
+        <div class="wall-guide">
+          <span class="guide-item">
+            <span class="dot dot-sm"></span> Lời chúc cá nhân
+          </span>
+          <span class="guide-divider">•</span>
+          <span class="guide-item">
+            <span class="dot dot-md"></span> Chung niềm cảm mến
+          </span>
+          <span class="guide-divider">•</span>
+          <span class="guide-item">
+            <span class="dot dot-lg"></span> Lời chúc nhiều sự đồng điệu nhất (to lớn & nổi bật ở trung tâm)
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════ SITE FOOTER ═══════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-quote">
+        “Cảm ơn thầy cô vì đã luôn tận tâm trên hành trình gieo mầm tri thức.<br>
+        Chúc thầy cô một ngày 20/11 thật nhiều niềm vui, hạnh phúc và ý nghĩa!”
+      </div>
+      <div class="footer-credits">
+        Made with love by students ❤️ – Happy Vietnamese Teachers' Day 20/11
+      </div>
+    </div>
+  </footer>
+
+  <!-- Transition Curtain for Cinematic View Change -->
+  <div id="transition-curtain" class="transition-curtain" aria-hidden="true"></div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

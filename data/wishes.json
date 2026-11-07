@@ -1,0 +1,13 @@
+{
+  "wishes": [
+    {
+      "id": 1,
+      "content": "chúc thầy cô 20/11 vui vẻ",
+      "normalized": "chúc thầy cô 20/11 vui vẻ",
+      "count": 2,
+      "created_at": "2026-11-07T16:15:20.016Z",
+      "updated_at": "2026-11-07T16:15:44.701Z"
+    }
+  ],
+  "nextId": 2
+}

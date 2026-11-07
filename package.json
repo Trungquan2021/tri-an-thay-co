@@ -1,0 +1,15 @@
+{
+  "name": "tri-an-thay-co-2011",
+  "version": "1.0.0",
+  "description": "Bức Tường Lời Tri Ân – Website chúc mừng ngày Nhà giáo Việt Nam 20/11",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "socket.io": "^4.8.1"
+  }
+}
