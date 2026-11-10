@@ -363,6 +363,7 @@
 
     // Aesthetic jitter angles (degrees)
     const JITTER_ANGLES = [-2.8, 1.6, -1.2, 2.4, -0.8, 2.9, -2.1, 1.2, -3.2, 0.9];
+    const WISH_ICONS = ['🌻', '🌸', '🪶', '📖', '🎓', '🕊️', '🌿', '💐', '🕯️', '📜'];
 
     sorted.forEach((w, index) => {
       const el = document.createElement('div');
@@ -371,6 +372,7 @@
       const tierClass = getTierClass(w.count);
       const markerColor = MARKER_COLORS[hash % MARKER_COLORS.length];
       const angle = JITTER_ANGLES[hash % JITTER_ANGLES.length];
+      const icon = WISH_ICONS[hash % WISH_ICONS.length];
 
       el.className = `wb-wish-card ${tierClass} ${markerColor}`;
       el.dataset.wishId = w.id;
@@ -381,8 +383,17 @@
         el.style.transform = `rotate(${angle}deg)`;
       }
 
-      // Pure text content - absolutely NO x2, x3 or badges
-      el.textContent = w.content;
+      // Decorative frame, icon, leaf, and text
+      el.innerHTML = `
+        <div class="card-inner-frame">
+          <div class="card-deco-bar">
+            <span class="card-icon" title="20/11">${icon}</span>
+            <span class="card-leaf" aria-hidden="true">🌿</span>
+          </div>
+          <div class="card-content-text">${escapeHTML(w.content)}</div>
+          <span class="card-floral-stamp" aria-hidden="true">❦</span>
+        </div>
+      `;
 
       // Highlight if current user's submission
       if (userWishContent && w.normalized === userWishContent) {
@@ -391,6 +402,12 @@
 
       boardScatterStage.appendChild(el);
     });
+  }
+
+  function escapeHTML(str) {
+    return String(str).replace(/[&<>'"]/g, 
+      tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+    );
   }
 
   /*

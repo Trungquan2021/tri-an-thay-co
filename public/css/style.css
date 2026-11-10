@@ -703,6 +703,46 @@ body.editorial-theme {
   box-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
+/* 20/11 Floral Accents on Whiteboard Frame */
+.board-floral-accent {
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.22));
+}
+
+.board-floral-accent.accent-top-right {
+  top: -16px;
+  right: 28px;
+}
+
+.board-floral-accent.accent-bottom-left {
+  bottom: 6px;
+  left: 20px;
+}
+
+.board-floral-accent .flower-emoji {
+  font-size: 26px;
+  display: inline-block;
+  transform: rotate(-10deg);
+}
+
+.board-floral-accent .flower-emoji-sm {
+  font-size: 18px;
+  display: inline-block;
+  transform: rotate(15deg);
+}
+
+.board-floral-accent .leaf-emoji {
+  font-size: 22px;
+  display: inline-block;
+  transform: rotate(25deg);
+}
+
 /* Whiteboard Writing Surface */
 .whiteboard-surface {
   background-color: var(--wb-bg);
@@ -827,29 +867,93 @@ body.editorial-theme {
 .wb-wish-card {
   break-inside: avoid;
   page-break-inside: avoid;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   display: block;
   position: relative;
   background: #FFFFFF;
-  border-radius: 8px;
-  padding: 14px 18px;
+  border-radius: 10px;
+  padding: 6px;
   cursor: default;
   font-family: var(--font-serif) !important;
   line-height: 1.45;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 
-    0 2px 6px rgba(0, 0, 0, 0.04),
-    0 1px 2px rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+    0 4px 14px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+/* Washi Tape Accent on Top of Card */
+.wb-wish-card::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 13px;
+  background: rgba(229, 211, 169, 0.7);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+/* Inner decorative frame */
+.card-inner-frame {
+  border: 1px dashed rgba(197, 160, 89, 0.45);
+  border-radius: 6px;
+  padding: 10px 14px 14px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FDFCF9 100%);
+  position: relative;
+}
+
+/* Card Top Decorative Bar with Icon & Leaf */
+.card-deco-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px dotted rgba(197, 160, 89, 0.35);
+}
+
+.card-icon {
+  font-size: 16px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+}
+
+.card-leaf {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+/* Text content inside the frame */
+.card-content-text {
+  word-break: break-word;
+}
+
+/* Watermark Floral Stamp */
+.card-floral-stamp {
+  position: absolute;
+  bottom: 2px;
+  right: 6px;
+  font-size: 13px;
+  color: var(--color-gold);
+  opacity: 0.25;
+  pointer-events: none;
+  font-family: serif;
 }
 
 /* Natural marker rotation & random placement jitter */
 .wb-wish-card:hover {
   transform: scale(1.06) rotate(0deg) !important;
   box-shadow: 
-    0 12px 28px rgba(0, 0, 0, 0.12),
-    0 4px 10px rgba(0, 0, 0, 0.06);
-  background: #FFFFFF;
+    0 14px 32px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(197, 160, 89, 0.18);
+  border-color: var(--color-gold);
   z-index: 20;
 }
 
