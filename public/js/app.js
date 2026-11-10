@@ -361,12 +361,6 @@
       'marker-amber'
     ];
 
-    const FONT_STYLES = [
-      'font-handwriting',
-      'font-serif',
-      'font-poetic'
-    ];
-
     // Aesthetic jitter angles (degrees)
     const JITTER_ANGLES = [-2.8, 1.6, -1.2, 2.4, -0.8, 2.9, -2.1, 1.2, -3.2, 0.9];
 
@@ -376,10 +370,9 @@
 
       const tierClass = getTierClass(w.count);
       const markerColor = MARKER_COLORS[hash % MARKER_COLORS.length];
-      const fontStyle = FONT_STYLES[hash % FONT_STYLES.length];
       const angle = JITTER_ANGLES[hash % JITTER_ANGLES.length];
 
-      el.className = `wb-wish-card ${tierClass} ${markerColor} ${fontStyle}`;
+      el.className = `wb-wish-card ${tierClass} ${markerColor}`;
       el.dataset.wishId = w.id;
       el.dataset.count = w.count;
 

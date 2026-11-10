@@ -37,8 +37,8 @@
   --ink-amber: #92400E;
 
   --font-serif: 'Playfair Display', Georgia, serif;
-  --font-handwriting: 'Caveat', cursive, sans-serif;
-  --font-poetic: 'Cormorant Garamond', Georgia, serif;
+  --font-handwriting: 'Playfair Display', Georgia, serif;
+  --font-poetic: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --shadow-sm: 0 2px 8px rgba(31, 36, 40, 0.05);
@@ -834,6 +834,8 @@ body.editorial-theme {
   border-radius: 8px;
   padding: 14px 18px;
   cursor: default;
+  font-family: var(--font-serif) !important;
+  line-height: 1.45;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 
     0 2px 6px rgba(0, 0, 0, 0.04),
@@ -880,24 +882,6 @@ body.editorial-theme {
 .wb-wish-card.marker-amber {
   color: var(--ink-amber);
   border-left: 3px solid rgba(146, 64, 14, 0.4);
-}
-
-/* Handwriting Font variation */
-.wb-wish-card.font-handwriting {
-  font-family: var(--font-handwriting);
-  letter-spacing: 0.3px;
-  line-height: 1.35;
-}
-
-.wb-wish-card.font-serif {
-  font-family: var(--font-serif);
-  line-height: 1.4;
-}
-
-.wb-wish-card.font-poetic {
-  font-family: var(--font-poetic);
-  font-style: italic;
-  line-height: 1.45;
 }
 
 /* ─────────────────────────────────────────────────────────────
