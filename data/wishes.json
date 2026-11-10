@@ -2,12 +2,164 @@
   "wishes": [
     {
       "id": 1,
-      "content": "chúc thầy cô 20/11 vui vẻ",
-      "normalized": "chúc thầy cô 20/11 vui vẻ",
+      "content": "Chúc thầy cô luôn mạnh khỏe, hạnh phúc và giữ mãi ngọn lửa nhiệt huyết với nghề.",
+      "normalized": "chúc thầy cô luôn mạnh khỏe hạnh phúc và giữ mãi ngọn lửa nhiệt huyết với nghề",
+      "count": 5,
+      "created_at": "2026-11-10T14:40:00.000Z",
+      "updated_at": "2026-11-10T14:40:00.000Z"
+    },
+    {
+      "id": 2,
+      "content": "Cảm ơn thầy cô đã tận tâm dìu dắt chúng em trên hành trình tri thức. Chúc thầy cô một ngày 20/11 thật ý nghĩa!",
+      "normalized": "cảm ơn thầy cô đã tận tâm dìu dắt chúng em trên hành trình tri thức chúc thầy cô một ngày 20/11 thật ý nghĩa",
+      "count": 4,
+      "created_at": "2026-11-10T14:40:01.000Z",
+      "updated_at": "2026-11-10T14:40:01.000Z"
+    },
+    {
+      "id": 3,
+      "content": "Chúc thầy cô luôn vui vẻ, bình an và gặt hái nhiều thành công trong sự nghiệp trồng người.",
+      "normalized": "chúc thầy cô luôn vui vẻ bình an và gặt hái nhiều thành công trong sự nghiệp trồng người",
+      "count": 3,
+      "created_at": "2026-11-10T14:40:02.000Z",
+      "updated_at": "2026-11-10T14:40:02.000Z"
+    },
+    {
+      "id": 4,
+      "content": "Mong thầy cô luôn giữ nụ cười trên môi và niềm đam mê trong từng bài giảng.",
+      "normalized": "mong thầy cô luôn giữ nụ cười trên môi và niềm đam mê trong từng bài giảng",
+      "count": 3,
+      "created_at": "2026-11-10T14:40:03.000Z",
+      "updated_at": "2026-11-10T14:40:03.000Z"
+    },
+    {
+      "id": 5,
+      "content": "Kính chúc thầy cô thật nhiều sức khỏe để tiếp tục chắp cánh cho những ước mơ bay xa.",
+      "normalized": "kính chúc thầy cô thật nhiều sức khỏe để tiếp tục chắp cánh cho những ước mơ bay xa",
+      "count": 4,
+      "created_at": "2026-11-10T14:40:04.000Z",
+      "updated_at": "2026-11-10T14:40:04.000Z"
+    },
+    {
+      "id": 6,
+      "content": "Cảm ơn thầy cô vì không chỉ dạy chúng em kiến thức mà còn dạy cách làm người.",
+      "normalized": "cảm ơn thầy cô vì không chỉ dạy chúng em kiến thức mà còn dạy cách làm người",
       "count": 2,
-      "created_at": "2026-11-07T16:15:20.016Z",
-      "updated_at": "2026-11-07T16:15:44.701Z"
+      "created_at": "2026-11-10T14:40:05.000Z",
+      "updated_at": "2026-11-10T14:40:05.000Z"
+    },
+    {
+      "id": 7,
+      "content": "Chúc thầy cô có một ngày 20/11 ngập tràn niềm vui, yêu thương và những điều tốt đẹp nhất.",
+      "normalized": "chúc thầy cô có một ngày 20/11 ngập tràn niềm vui yêu thương và những điều tốt đẹp nhất",
+      "count": 3,
+      "created_at": "2026-11-10T14:40:06.000Z",
+      "updated_at": "2026-11-10T14:40:06.000Z"
+    },
+    {
+      "id": 8,
+      "content": "Mong mọi tâm huyết và sự hy sinh của thầy cô luôn được đền đáp bằng những thành công của học trò.",
+      "normalized": "mong mọi tâm huyết và sự hy sinh của thầy cô luôn được đền đáp bằng những thành công của học trò",
+      "count": 2,
+      "created_at": "2026-11-10T14:40:07.000Z",
+      "updated_at": "2026-11-10T14:40:07.000Z"
+    },
+    {
+      "id": 9,
+      "content": "Chúc thầy cô luôn trẻ trung, yêu đời và tràn đầy năng lượng trong mỗi ngày đến lớp.",
+      "normalized": "chúc thầy cô luôn trẻ trung yêu đời và tràn đầy năng lượng trong mỗi ngày đến lớp",
+      "count": 2,
+      "created_at": "2026-11-10T14:40:08.000Z",
+      "updated_at": "2026-11-10T14:40:08.000Z"
+    },
+    {
+      "id": 10,
+      "content": "Cảm ơn thầy cô đã kiên nhẫn với chúng em, ngay cả trong những lúc chúng em chưa thật sự trưởng thành.",
+      "normalized": "cảm ơn thầy cô đã kiên nhẫn với chúng em ngay cả trong những lúc chúng em chưa thật sự trưởng thành",
+      "count": 3,
+      "created_at": "2026-11-10T14:40:09.000Z",
+      "updated_at": "2026-11-10T14:40:09.000Z"
+    },
+    {
+      "id": 11,
+      "content": "Chúc thầy cô luôn là người truyền cảm hứng và là ký ức đẹp trong thanh xuân của mỗi học trò.",
+      "normalized": "chúc thầy cô luôn là người truyền cảm hứng và là ký ức đẹp trong thanh xuân của mỗi học trò",
+      "count": 2,
+      "created_at": "2026-11-10T14:40:10.000Z",
+      "updated_at": "2026-11-10T14:40:10.000Z"
+    },
+    {
+      "id": 12,
+      "content": "Mong thầy cô luôn gặp nhiều may mắn, thuận lợi và hạnh phúc trên con đường mình đã chọn.",
+      "normalized": "mong thầy cô luôn gặp nhiều may mắn thuận lợi và hạnh phúc trên con đường mình đã chọn",
+      "count": 1,
+      "created_at": "2026-11-10T14:40:11.000Z",
+      "updated_at": "2026-11-10T14:40:11.000Z"
+    },
+    {
+      "id": 13,
+      "content": "Chúc những bài giảng của thầy cô luôn gieo mầm tri thức và nuôi dưỡng thật nhiều ước mơ.",
+      "normalized": "chúc những bài giảng của thầy cô luôn gieo mầm tri thức và nuôi dưỡng thật nhiều ước mơ",
+      "count": 2,
+      "created_at": "2026-11-10T14:40:12.000Z",
+      "updated_at": "2026-11-10T14:40:12.000Z"
+    },
+    {
+      "id": 14,
+      "content": "Dù thời gian có trôi qua, những điều thầy cô dạy sẽ mãi là hành trang quý giá của chúng em.",
+      "normalized": "dù thời gian có trôi qua những điều thầy cô dạy sẽ mãi là hành trang quý giá của chúng em",
+      "count": 2,
+      "created_at": "2026-11-10T14:40:13.000Z",
+      "updated_at": "2026-11-10T14:40:13.000Z"
+    },
+    {
+      "id": 15,
+      "content": "Chúc thầy cô luôn được yêu thương, trân trọng và nhận lại thật nhiều niềm vui từ nghề giáo.",
+      "normalized": "chúc thầy cô luôn được yêu thương trân trọng và nhận lại thật nhiều niềm vui từ nghề giáo",
+      "count": 1,
+      "created_at": "2026-11-10T14:40:14.000Z",
+      "updated_at": "2026-11-10T14:40:14.000Z"
+    },
+    {
+      "id": 16,
+      "content": "Cảm ơn thầy cô vì đã nhìn thấy tiềm năng trong chúng em, ngay cả khi chính chúng em chưa nhận ra điều đó.",
+      "normalized": "cảm ơn thầy cô vì đã nhìn thấy tiềm năng trong chúng em ngay cả khi chính chúng em chưa nhận ra điều đó",
+      "count": 2,
+      "created_at": "2026-11-10T14:40:15.000Z",
+      "updated_at": "2026-11-10T14:40:15.000Z"
+    },
+    {
+      "id": 17,
+      "content": "Chúc thầy cô mỗi ngày đều có thêm một lý do để yêu nghề và tự hào về những thế hệ học trò.",
+      "normalized": "chúc thầy cô mỗi ngày đều có thêm một lý do để yêu nghề và tự hào về những thế hệ học trò",
+      "count": 1,
+      "created_at": "2026-11-10T14:40:16.000Z",
+      "updated_at": "2026-11-10T14:40:16.000Z"
+    },
+    {
+      "id": 18,
+      "content": "Mong thầy cô luôn bình an, hạnh phúc và có thật nhiều khoảnh khắc đáng nhớ bên học trò.",
+      "normalized": "mong thầy cô luôn bình an hạnh phúc và có thật nhiều khoảnh khắc đáng nhớ bên học trò",
+      "count": 1,
+      "created_at": "2026-11-10T14:40:17.000Z",
+      "updated_at": "2026-11-10T14:40:17.000Z"
+    },
+    {
+      "id": 19,
+      "content": "Chúc thầy cô mãi là người lái đò tận tụy, đưa bao thế hệ học sinh đến bến bờ tri thức.",
+      "normalized": "chúc thầy cô mãi là người lái đò tận tụy đưa bao thế hệ học sinh đến bến bờ tri thức",
+      "count": 3,
+      "created_at": "2026-11-10T14:40:18.000Z",
+      "updated_at": "2026-11-10T14:40:18.000Z"
+    },
+    {
+      "id": 20,
+      "content": "Không có lời cảm ơn nào đủ lớn cho những điều thầy cô đã làm. Kính chúc thầy cô một mùa 20/11 thật trọn vẹn!",
+      "normalized": "không có lời cảm ơn nào đủ lớn cho những điều thầy cô đã làm kính chúc thầy cô một mùa 20/11 thật trọn vẹn",
+      "count": 4,
+      "created_at": "2026-11-10T14:40:19.000Z",
+      "updated_at": "2026-11-10T14:40:19.000Z"
     }
   ],
-  "nextId": 2
+  "nextId": 21
 }
